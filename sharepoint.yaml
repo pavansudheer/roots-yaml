@@ -1,0 +1,1335 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Lists
+  description: An OAS document generated from WSDL
+  termsOfService: ''
+  contact:
+    name: API Team,
+    email: "apiagateway-support@slb.com"
+  license:
+    name: Apache 2.0
+host: evd.apigateway.slb.com
+basePath: /lists-1
+externalDocs:
+  description: "Find out more on the online share pointURL"
+  url: "https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service"
+tags:
+  - name: Lists 
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+security:
+  - APIKeyHeader: []
+paths:
+  /list:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation UpdateList
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/UpdateListResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: description
+          in: query
+          required: true
+          type: string
+        - name: templateID
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/UpdateList'
+  /listandview:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation GetListAndView
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GetListAndViewResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: viewName
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/GetListAndView'
+  /listfromfeature:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation AddListFromFeature
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/AddListFromFeatureResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: description
+          in: query
+          required: true
+          type: string
+        - name: featureID
+          in: query
+          required: true
+          type: string
+        - name: templateID
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/AddListFromFeature'
+  /listcollection:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation GetListCollection
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GetListCollectionResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: description
+          in: query
+          required: true
+          type: string
+        - name: featureID
+          in: query
+          required: true
+          type: string
+        - name: templateID
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/GetListCollection'
+  /listitems:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation UpdateListItems
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/UpdateListItemsResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: viewFields
+          in: query
+          required: true
+          type: string
+        - name: viewName
+          in: query
+          required: true
+          type: string
+        - name: query
+          in: query
+          required: true
+          type: string
+        - name: rowLimit
+          in: query
+          required: true
+          type: string
+        - name: queryOptions
+          in: query
+          required: true
+          type: string
+        - name: webID
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/UpdateListItems'
+  /listitemchanges:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation GetListItemChanges
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GetListItemChangesResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: viewFields
+          in: query
+          required: true
+          type: string
+        - name: since
+          in: query
+          required: true
+          type: string
+        - name: contains
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/GetListItemChanges'
+  /listitemchangeswithknowledge:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation GetListItemChangesWithKnowledge
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GetListItemChangesWithKnowledgeResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: viewFields
+          in: query
+          required: true
+          type: string
+        - name: viewName
+          in: query
+          required: true
+          type: string
+        - name: knowledge
+          in: query
+          required: true
+          type: string
+        - name: rowLimit
+          in: query
+          required: true
+          type: string
+        - name: queryOptions
+          in: query
+          required: true
+          type: string
+        - name: syncScope
+          in: query
+          required: true
+          type: string
+        - name: contains
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/GetListItemChangesWithKnowledge'
+  /listitemchangessincetoken:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation GetListItemChangesSinceToken
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GetListItemChangesSinceTokenResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: viewFields
+          in: query
+          required: true
+          type: string
+        - name: viewName
+          in: query
+          required: true
+          type: string
+        - name: knowledge
+          in: query
+          required: true
+          type: string
+        - name: rowLimit
+          in: query
+          required: true
+          type: string
+        - name: queryOptions
+          in: query
+          required: true
+          type: string
+        - name: changeToken
+          in: query
+          required: true
+          type: string
+        - name: contains
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/GetListItemChangesSinceToken'
+  /listitemswithknowledge:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation UpdateListItemsWithKnowledge
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/UpdateListItemsWithKnowledgeResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: updates
+          in: query
+          required: true
+          type: string
+        - name: syncScope
+          in: query
+          required: true
+          type: string
+        - name: knowledge
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/UpdateListItemsWithKnowledge'
+  /discussionboarditem:
+    post:
+      tags:
+        - Lists
+      description: Implements WSDL operation AddDiscussionBoardItem
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/AddDiscussionBoardItemResponse'
+          description: Successful response
+      parameters:
+        - name: AddDiscussionBoardItem
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/AddDiscussionBoardItem'
+  /wikipage:
+    post:
+      tags:
+        - Lists
+      description: Implements WSDL operation AddWikiPage
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/AddWikiPageResponse'
+          description: Successful response
+      parameters:
+        - name: AddWikiPage
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/AddWikiPage'
+  /versioncollection:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation GetVersionCollection
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GetVersionCollectionResponse'
+          description: Successful response
+      parameters:
+        - name: strlistID
+          in: query
+          required: true
+          type: string
+        - name: strlistItemID
+          in: query
+          required: true
+          type: string
+        - name: strFieldName
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/GetVersionCollection'
+  /attachment:
+    post:
+      tags:
+        - Lists
+      description: Implements WSDL operation AddAttachment
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/AddAttachmentResponse'
+          description: Successful response
+      parameters:
+        - name: AddAttachment
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/AddAttachment'
+    delete:
+      tags:
+        - Lists
+      description: Implements WSDL operation DeleteAttachment
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/DeleteAttachmentResponse'
+          description: Successful response
+      parameters:
+        - name: DeleteAttachment
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/DeleteAttachment'
+  /attachmentcollection:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation GetAttachmentCollection
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GetAttachmentCollectionResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: listItemID
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/GetAttachmentCollection'
+  /checkoutfile:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation CheckOutFile
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/CheckOutFileResponse'
+          description: Successful response
+      parameters:
+        - name: UrlMetadata
+          in: query
+          required: true
+          type: string
+        - name: IsResourcePath
+          in: query
+          required: true
+          type: string
+        - name: pageUrl
+          in: query
+          required: true
+          type: string
+        - name: checkoutToLocal
+          in: query
+          required: true
+          type: string
+        - name: lastmodified
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/CheckOutFile'
+  /undocheckout:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation UndoCheckOut
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/UndoCheckOutResponse'
+          description: Successful response
+      parameters:
+        - name: IsResourcePath
+          in: query
+          required: true
+          type: string
+        - name: pageUrl
+          in: query
+          required: true
+          type: string
+        - name: checkoutToLocal
+          in: query
+          required: true
+          type: string
+        - name: lastmodified
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/UndoCheckOut'
+  /checkinfile:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation CheckInFile
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/CheckInFileResponse'
+          description: Successful response
+      parameters:
+        - name: UrlMetadata
+          in: query
+          required: true
+          type: string
+        - name: IsResourcePath
+          in: query
+          required: true
+          type: string
+        - name: pageUrl
+          in: query
+          required: true
+          type: string
+        - name: comment
+          in: query
+          required: true
+          type: string
+        - name: CheckinType
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/CheckInFile'
+  /listcontenttypes:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation GetListContentTypes
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GetListContentTypesResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: contentTypeId
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/GetListContentTypes'
+  /listcontenttypesandproperties:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation GetListContentTypesAndProperties
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GetListContentTypesAndPropertiesResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: contentTypeId
+          in: query
+          required: true
+          type: string
+        - name: propertyPrefix
+          in: query
+          required: true
+          type: string
+        - name: includeWebProperties
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/GetListContentTypesAndProperties'
+  /listcontenttype:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation GetListContentType
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/GetListContentTypeResponse'
+          description: Successful response
+      parameters:
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - name: contentTypeId
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/GetListContentType'
+  /contenttype:
+    post:
+      tags:
+        - Lists
+      description: Implements WSDL operation CreateContentType
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/CreateContentTypeResponse'
+          description: Successful response
+      parameters:
+        - name: CreateContentType
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/CreateContentType'
+    put:
+      tags:
+        - Lists
+      description: Implements WSDL operation UpdateContentType
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/UpdateContentTypeResponse'
+          description: Successful response
+      parameters:
+        - name: UpdateContentType
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/UpdateContentType'
+    delete:
+      tags:
+        - Lists
+      description: Implements WSDL operation DeleteContentType
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/DeleteContentTypeResponse'
+          description: Successful response
+      parameters:
+        - name: DeleteContentType
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/DeleteContentType'
+  /contenttypexmldocument:
+    put:
+      tags:
+        - Lists
+      description: Implements WSDL operation UpdateContentTypeXmlDocument
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/UpdateContentTypeXmlDocumentResponse'
+          description: Successful response
+      parameters:
+        - name: UpdateContentTypeXmlDocument
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/UpdateContentTypeXmlDocument'
+    delete:
+      tags:
+        - Lists
+      description: Implements WSDL operation DeleteContentTypeXmlDocument
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/DeleteContentTypeXmlDocumentResponse'
+          description: Successful response
+      parameters:
+        - name: DeleteContentTypeXmlDocument
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/DeleteContentTypeXmlDocument'
+  /contenttypesxmldocument:
+    put:
+      tags:
+        - Lists
+      description: Implements WSDL operation UpdateContentTypesXmlDocument
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/UpdateContentTypesXmlDocumentResponse'
+          description: Successful response
+      parameters:
+        - name: UpdateContentTypesXmlDocument
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/UpdateContentTypesXmlDocument'
+  /applycontenttypetolist:
+    get:
+      tags:
+        - Lists
+      description: Implements WSDL operation ApplyContentTypeToList
+      produces:
+        - application/json
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/ApplyContentTypeToListResponse'
+          description: Successful response
+      parameters:
+        - name: webUrl
+          in: query
+          required: true
+          type: string
+        - name: contentTypeId
+          in: query
+          required: true
+          type: string
+        - name: listName
+          in: query
+          required: true
+          type: string
+        - $ref: '#/definitions/ApplyContentTypeToList'
+definitions:
+  GetList:
+    properties:
+      listName:
+        type: string
+    type: object
+  GetListResponse:
+    properties:
+      GetListResult:
+        $ref: '#/definitions/GetListResult'
+    type: object
+  GetListResult:
+    properties: {}
+    type: object
+  GetListAndView:
+    properties:
+      listName:
+        type: string
+      viewName:
+        type: string
+    type: object
+  GetListAndViewResponse:
+    properties:
+      GetListAndViewResult:
+        $ref: '#/definitions/GetListAndViewResult'
+    type: object
+  GetListAndViewResult:
+    properties: {}
+    type: object
+  DeleteList:
+    properties:
+      listName:
+        type: string
+    type: object
+  DeleteListResponse:
+    properties: {}
+    type: object
+  AddList:
+    properties:
+      listName:
+        type: string
+      description:
+        type: string
+      templateID:
+        type: integer
+        format: int32
+    type: object
+  AddListResponse:
+    properties:
+      AddListResult:
+        $ref: '#/definitions/AddListResult'
+    type: object
+  AddListResult:
+    properties: {}
+    type: object
+  AddListFromFeature:
+    properties:
+      listName:
+        type: string
+      description:
+        type: string
+      templateID:
+        type: integer
+        format: int32
+    type: object
+  AddListFromFeatureResponse:
+    properties:
+      AddListFromFeatureResult:
+        $ref: '#/definitions/AddListFromFeatureResult'
+    type: object
+  AddListFromFeatureResult:
+    properties: {}
+    type: object
+  UpdateList:
+    properties:
+      listName:
+        type: string
+      listProperties:
+        $ref: '#/definitions/listProperties'
+      newFields:
+        $ref: '#/definitions/newFields'
+      updateFields:
+        $ref: '#/definitions/updateFields'
+      deleteFields:
+        $ref: '#/definitions/deleteFields'
+      listVersion:
+        type: string
+    type: object
+  listProperties:
+    properties: {}
+    type: object
+  newFields:
+    properties: {}
+    type: object
+  updateFields:
+    properties: {}
+    type: object
+  deleteFields:
+    properties: {}
+    type: object
+  UpdateListResponse:
+    properties:
+      UpdateListResult:
+        $ref: '#/definitions/UpdateListResult'
+    type: object
+  UpdateListResult:
+    properties: {}
+    type: object
+  GetListCollection:
+    properties: {}
+    type: object
+  GetListCollectionResponse:
+    properties:
+      GetListCollectionResult:
+        $ref: '#/definitions/GetListCollectionResult'
+    type: object
+  GetListCollectionResult:
+    properties: {}
+    type: object
+  GetListItems:
+    properties:
+      listName:
+        type: string
+      viewName:
+        type: string
+      query:
+        $ref: '#/definitions/query'
+      viewFields:
+        $ref: '#/definitions/viewFields'
+      rowLimit:
+        type: string
+      queryOptions:
+        $ref: '#/definitions/queryOptions'
+      webID:
+        type: string
+    type: object
+  query:
+    properties: {}
+    type: object
+  viewFields:
+    properties: {}
+    type: object
+  queryOptions:
+    properties: {}
+    type: object
+  GetListItemsResponse:
+    properties:
+      GetListItemsResult:
+        $ref: '#/definitions/GetListItemsResult'
+    type: object
+  GetListItemsResult:
+    properties: {}
+    type: object
+  GetListItemChanges:
+    properties:
+      listName:
+        type: string
+      viewFields:
+        $ref: '#/definitions/viewFields'
+      since:
+        type: string
+      contains:
+        $ref: '#/definitions/contains'
+    type: object
+  contains:
+    properties: {}
+    type: object
+  GetListItemChangesResponse:
+    properties:
+      GetListItemChangesResult:
+        $ref: '#/definitions/GetListItemChangesResult'
+    type: object
+  GetListItemChangesResult:
+    properties: {}
+    type: object
+  GetListItemChangesWithKnowledge:
+    properties:
+      listName:
+        type: string
+      viewName:
+        type: string
+      query:
+        $ref: '#/definitions/query'
+      viewFields:
+        $ref: '#/definitions/viewFields'
+      rowLimit:
+        type: string
+      queryOptions:
+        $ref: '#/definitions/queryOptions'
+      syncScope:
+        type: string
+      knowledge:
+        $ref: '#/definitions/knowledge'
+      contains:
+        $ref: '#/definitions/contains'
+    type: object
+  knowledge:
+    properties: {}
+    type: object
+  GetListItemChangesWithKnowledgeResponse:
+    properties:
+      GetListItemChangesWithKnowledgeResult:
+        $ref: '#/definitions/GetListItemChangesWithKnowledgeResult'
+    type: object
+  GetListItemChangesWithKnowledgeResult:
+    properties: {}
+    type: object
+  GetListItemChangesSinceToken:
+    properties:
+      listName:
+        type: string
+      viewName:
+        type: string
+      query:
+        $ref: '#/definitions/query'
+      viewFields:
+        $ref: '#/definitions/viewFields'
+      rowLimit:
+        type: string
+      queryOptions:
+        $ref: '#/definitions/queryOptions'
+      changeToken:
+        type: string
+      contains:
+        $ref: '#/definitions/contains'
+    type: object
+  GetListItemChangesSinceTokenResponse:
+    properties:
+      GetListItemChangesSinceTokenResult:
+        $ref: '#/definitions/GetListItemChangesSinceTokenResult'
+    type: object
+  GetListItemChangesSinceTokenResult:
+    properties: {}
+    type: object
+  UpdateListItems:
+    properties:
+      listName:
+        type: string
+      updates:
+        $ref: '#/definitions/updates'
+    type: object
+  updates:
+    properties: {}
+    type: object
+  UpdateListItemsResponse:
+    properties:
+      UpdateListItemsResult:
+        $ref: '#/definitions/UpdateListItemsResult'
+    type: object
+  UpdateListItemsResult:
+    properties: {}
+    type: object
+  UpdateListItemsWithKnowledge:
+    properties:
+      listName:
+        type: string
+      updates:
+        $ref: '#/definitions/updates'
+      syncScope:
+        type: string
+      knowledge:
+        $ref: '#/definitions/knowledge'
+    type: object
+  UpdateListItemsWithKnowledgeResponse:
+    properties:
+      UpdateListItemsWithKnowledgeResult:
+        $ref: '#/definitions/UpdateListItemsWithKnowledgeResult'
+    type: object
+  UpdateListItemsWithKnowledgeResult:
+    properties: {}
+    type: object
+  AddDiscussionBoardItem:
+    properties:
+      listName:
+        type: string
+      message:
+        type: string
+        format: byte
+    type: object
+  AddDiscussionBoardItemResponse:
+    properties:
+      AddDiscussionBoardItemResult:
+        $ref: '#/definitions/AddDiscussionBoardItemResult'
+    type: object
+  AddDiscussionBoardItemResult:
+    properties: {}
+    type: object
+  AddWikiPage:
+    properties:
+      strListName:
+        type: string
+      listRelPageUrl:
+        type: string
+      wikiContent:
+        type: string
+    type: object
+  AddWikiPageResponse:
+    properties:
+      AddWikiPageResult:
+        $ref: '#/definitions/AddWikiPageResult'
+    type: object
+  AddWikiPageResult:
+    properties: {}
+    type: object
+  GetVersionCollection:
+    properties:
+      strlistID:
+        type: string
+      strlistItemID:
+        type: string
+      strFieldName:
+        type: string
+    type: object
+  GetVersionCollectionResponse:
+    properties:
+      GetVersionCollectionResult:
+        $ref: '#/definitions/GetVersionCollectionResult'
+    type: object
+  GetVersionCollectionResult:
+    properties: {}
+    type: object
+  AddAttachment:
+    properties:
+      listName:
+        type: string
+      listItemID:
+        type: string
+      fileName:
+        type: string
+      attachment:
+        type: string
+        format: byte
+    type: object
+  AddAttachmentResponse:
+    properties:
+      AddAttachmentResult:
+        type: string
+    type: object
+  GetAttachmentCollection:
+    properties:
+      listName:
+        type: string
+      listItemID:
+        type: string
+    type: object
+  GetAttachmentCollectionResponse:
+    properties:
+      GetAttachmentCollectionResult:
+        $ref: '#/definitions/GetAttachmentCollectionResult'
+    type: object
+  GetAttachmentCollectionResult:
+    properties: {}
+    type: object
+  DeleteAttachment:
+    properties:
+      listName:
+        type: string
+      listItemID:
+        type: string
+      url:
+        type: string
+    type: object
+  DeleteAttachmentResponse:
+    properties: {}
+    type: object
+  CheckOutFile:
+    properties:
+      pageUrl:
+        type: string
+      checkoutToLocal:
+        type: string
+      lastmodified:
+        type: string
+    type: object
+  CheckOutFileResponse:
+    properties:
+      CheckOutFileResult:
+        type: boolean
+    type: object
+  UndoCheckOut:
+    properties:
+      pageUrl:
+        type: string
+    type: object
+  UndoCheckOutResponse:
+    properties:
+      UndoCheckOutResult:
+        type: boolean
+    type: object
+  CheckInFile:
+    properties:
+      pageUrl:
+        type: string
+      comment:
+        type: string
+      CheckinType:
+        type: string
+    type: object
+  CheckInFileResponse:
+    properties:
+      CheckInFileResult:
+        type: boolean
+    type: object
+  GetListContentTypes:
+    properties:
+      listName:
+        type: string
+      contentTypeId:
+        type: string
+    type: object
+  GetListContentTypesResponse:
+    properties:
+      GetListContentTypesResult:
+        $ref: '#/definitions/GetListContentTypesResult'
+    type: object
+  GetListContentTypesResult:
+    properties: {}
+    type: object
+  GetListContentTypesAndProperties:
+    properties:
+      listName:
+        type: string
+      contentTypeId:
+        type: string
+      propertyPrefix:
+        type: string
+      includeWebProperties:
+        type: boolean
+    type: object
+  GetListContentTypesAndPropertiesResponse:
+    properties:
+      GetListContentTypesAndPropertiesResult:
+        $ref: '#/definitions/GetListContentTypesAndPropertiesResult'
+    type: object
+  GetListContentTypesAndPropertiesResult:
+    properties: {}
+    type: object
+  GetListContentType:
+    properties:
+      listName:
+        type: string
+      contentTypeId:
+        type: string
+    type: object
+  GetListContentTypeResponse:
+    properties:
+      GetListContentTypeResult:
+        $ref: '#/definitions/GetListContentTypeResult'
+    type: object
+  GetListContentTypeResult:
+    properties: {}
+    type: object
+  CreateContentType:
+    properties:
+      listName:
+        type: string
+      displayName:
+        type: string
+      parentType:
+        type: string
+      fields:
+        $ref: '#/definitions/fields'
+      contentTypeProperties:
+        $ref: '#/definitions/contentTypeProperties'
+      addToView:
+        type: string
+    type: object
+  fields:
+    properties: {}
+    type: object
+  contentTypeProperties:
+    properties: {}
+    type: object
+  CreateContentTypeResponse:
+    properties:
+      CreateContentTypeResult:
+        type: string
+    type: object
+  UpdateContentType:
+    properties:
+      listName:
+        type: string
+      contentTypeId:
+        type: string
+      contentTypeProperties:
+        $ref: '#/definitions/contentTypeProperties'
+      newFields:
+        $ref: '#/definitions/newFields'
+      updateFields:
+        $ref: '#/definitions/updateFields'
+      deleteFields:
+        $ref: '#/definitions/deleteFields'
+      addToView:
+        type: string
+    type: object
+  UpdateContentTypeResponse:
+    properties:
+      UpdateContentTypeResult:
+        $ref: '#/definitions/UpdateContentTypeResult'
+    type: object
+  UpdateContentTypeResult:
+    properties: {}
+    type: object
+  DeleteContentType:
+    properties:
+      listName:
+        type: string
+      contentTypeId:
+        type: string
+    type: object
+  DeleteContentTypeResponse:
+    properties:
+      DeleteContentTypeResult:
+        $ref: '#/definitions/DeleteContentTypeResult'
+    type: object
+  DeleteContentTypeResult:
+    properties: {}
+    type: object
+  UpdateContentTypeXmlDocument:
+    properties:
+      listName:
+        type: string
+      contentTypeId:
+        type: string
+      newDocument:
+        $ref: '#/definitions/newDocument'
+    type: object
+  newDocument:
+    properties: {}
+    type: object
+  UpdateContentTypeXmlDocumentResponse:
+    properties:
+      UpdateContentTypeXmlDocumentResult:
+        $ref: '#/definitions/UpdateContentTypeXmlDocumentResult'
+    type: object
+  UpdateContentTypeXmlDocumentResult:
+    properties: {}
+    type: object
+  UpdateContentTypesXmlDocument:
+    properties:
+      listName:
+        type: string
+      newDocument:
+        $ref: '#/definitions/newDocument'
+    type: object
+  UpdateContentTypesXmlDocumentResponse:
+    properties:
+      UpdateContentTypesXmlDocumentResult:
+        $ref: '#/definitions/UpdateContentTypesXmlDocumentResult'
+    type: object
+  UpdateContentTypesXmlDocumentResult:
+    properties: {}
+    type: object
+  DeleteContentTypeXmlDocument:
+    properties:
+      listName:
+        type: string
+      contentTypeId:
+        type: string
+      documentUri:
+        type: string
+    type: object
+  DeleteContentTypeXmlDocumentResponse:
+    properties:
+      DeleteContentTypeXmlDocumentResult:
+        $ref: '#/definitions/DeleteContentTypeXmlDocumentResult'
+    type: object
+  DeleteContentTypeXmlDocumentResult:
+    properties: {}
+    type: object
+  ApplyContentTypeToList:
+    properties:
+      webUrl:
+        type: string
+      contentTypeId:
+        type: string
+      listName:
+        type: string
+    type: object
+  ApplyContentTypeToListResponse:
+    properties:
+      ApplyContentTypeToListResult:
+        $ref: '#/definitions/ApplyContentTypeToListResult'
+    type: object
+  ApplyContentTypeToListResult:
+    properties: {}
+    type: object
+securityDefinitions:
+  APIKeyHeader:
+    type: apiKey
+    name: x-apikey
+    in: header
